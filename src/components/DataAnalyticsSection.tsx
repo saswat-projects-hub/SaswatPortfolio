@@ -1,7 +1,13 @@
 import React from 'react';
+import TiltCard from './TiltCard';
+import ShootingStarsBackground from './ShootingStarsBackground';
 import { BarChart3, Calendar, TrendingUp, Award, Database, Code, Brain } from 'lucide-react';
 
-const DataAnalyticsSection: React.FC = () => {
+interface DataAnalyticsSectionProps {
+  setActiveTab: (tab: string) => void;
+}
+
+const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTab }) => {
   const internships = [
     {
       title: "Product Analyst Intern",
@@ -79,10 +85,12 @@ const DataAnalyticsSection: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen relative bg-background text-foreground overflow-hidden">
+      <ShootingStarsBackground />
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Data & Analytics</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-foreground mb-4">Data & Analytics</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Advanced analytics and machine learning expertise to drive business insights, predict outcomes, and optimize performance
         </p>
       </div>
@@ -91,19 +99,19 @@ const DataAnalyticsSection: React.FC = () => {
       <section className="mb-16">
         <div className="flex items-center mb-8">
           <BarChart3 className="text-teal-600 mr-3" size={28} />
-          <h2 className="text-3xl font-bold text-gray-900">Internships</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Internships</h2>
         </div>
         
         <div className="space-y-8">
           {internships.map((internship, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300">
+            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{internship.title}</h3>
-                  <p className="text-lg text-teal-600 font-semibold mb-1">{internship.company}</p>
-                  {internship.type && <p className="text-gray-600 mb-2">{internship.type}</p>}
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{internship.title}</h3>
+                  <p className="text-lg text-teal-600 dark:text-teal-400 font-semibold mb-1">{internship.company}</p>
+                  {internship.type && <p className="text-gray-700 dark:text-gray-300 mb-2">{internship.type}</p>}
                 </div>
-                <div className="flex items-center text-gray-500 mt-2 md:mt-0">
+                <div className="flex items-center text-gray-600 dark:text-gray-400 mt-2 md:mt-0">
                   <Calendar size={18} className="mr-2" />
                   <span className="font-medium">{internship.duration}</span>
                 </div>
@@ -113,11 +121,11 @@ const DataAnalyticsSection: React.FC = () => {
                 {internship.achievements.map((achievement, achIndex) => (
                   <div key={achIndex} className="flex items-start">
                     <TrendingUp className="text-green-500 mr-3 mt-1 flex-shrink-0" size={16} />
-                    <p className="text-gray-700">{achievement}</p>
+                    <p className="text-gray-700 dark:text-gray-300">{achievement}</p>
                   </div>
                 ))}
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </section>
@@ -126,23 +134,23 @@ const DataAnalyticsSection: React.FC = () => {
       <section className="mb-16">
         <div className="flex items-center mb-8">
           <Database className="text-teal-600 mr-3" size={28} />
-          <h2 className="text-3xl font-bold text-gray-900">Projects</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Projects</h2>
         </div>
         
         <div className="space-y-6">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{project.title}</h3>
+            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{project.title}</h3>
               
               <div className="space-y-3">
                 {project.achievements.map((achievement, achIndex) => (
                   <div key={achIndex} className="flex items-start">
                     <Brain className="text-teal-500 mr-3 mt-1 flex-shrink-0" size={16} />
-                    <p className="text-gray-700">{achievement}</p>
+                    <p className="text-gray-700 dark:text-gray-300">{achievement}</p>
                   </div>
                 ))}
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </section>
@@ -151,21 +159,21 @@ const DataAnalyticsSection: React.FC = () => {
       <section className="mb-16">
         <div className="flex items-center mb-8">
           <Award className="text-teal-600 mr-3" size={28} />
-          <h2 className="text-3xl font-bold text-gray-900">Competitions & Achievements</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Competitions & Achievements</h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6">
           {competitions.map((competition, index) => (
-            <div key={index} className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-xl p-6 border border-teal-200">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{competition.title}</h3>
+            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-white/10">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{competition.title}</h3>
               {competition.subtitle && (
-                <p className="text-teal-600 font-semibold mb-2">{competition.subtitle}</p>
+                <p className="text-teal-600 dark:text-teal-400 font-semibold mb-2">{competition.subtitle}</p>
               )}
               {competition.achievement && (
-                <p className="text-teal-700 font-semibold mb-2">{competition.achievement}</p>
+                <p className="text-teal-700 dark:text-teal-300 font-semibold mb-2">{competition.achievement}</p>
               )}
-              <p className="text-gray-700">{competition.description}</p>
-            </div>
+              <p className="text-gray-700 dark:text-gray-300">{competition.description}</p>
+            </TiltCard>
           ))}
         </div>
       </section>
@@ -174,27 +182,28 @@ const DataAnalyticsSection: React.FC = () => {
       <section>
         <div className="flex items-center mb-8">
           <Code className="text-teal-600 mr-3" size={28} />
-          <h2 className="text-3xl font-bold text-gray-900">Skills and Expertise</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Skills and Expertise</h2>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
           {skills.map((skillGroup, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg border border-gray-100 p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">{skillGroup.category}</h3>
+            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{skillGroup.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-medium"
+                    className="px-3 py-1 bg-teal-100/80 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 rounded-full text-sm font-medium border border-teal-200/50 dark:border-teal-700/50"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </section>
+      </div>
     </div>
   );
 };

@@ -1,13 +1,21 @@
 import React from 'react';
 import { MapPin, Calendar, Trophy, Users, Settings, BarChart3 } from 'lucide-react';
 
-const AboutSection: React.FC = () => {
+interface AboutSectionProps {
+  setActiveTab: (tab: string) => void;
+}
+
+const AboutSection: React.FC<AboutSectionProps> = ({ setActiveTab }) => {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero Section */}
       <div className="text-center mb-16">
         <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full mx-auto mb-8 flex items-center justify-center">
-          <span className="text-4xl font-bold text-white">YN</span>
+          <img
+            src="src/assets/images/Profile photo.jpeg"
+            alt="profile Logo"
+            className="w-50 h-50 object-cover rounded-full border-4 border-white shadow-lg"
+          />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           Saswat Dash
@@ -29,9 +37,12 @@ const AboutSection: React.FC = () => {
 
       {/* Professional Summary */}
       <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-8 mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Professional Summary</h2>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300 mb-6 text-center">Professional Summary</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
+          <div 
+            className="text-center cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => setActiveTab('product')}
+          >
             <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Settings className="text-white" size={24} />
             </div>
@@ -40,7 +51,10 @@ const AboutSection: React.FC = () => {
               Driving user growth and product innovation through data-driven decision making and strategic thinking
             </p>
           </div>
-          <div className="text-center">
+          <div 
+            className="text-center cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => setActiveTab('data')}
+          >
             <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <BarChart3 className="text-white" size={24} />
             </div>
@@ -49,7 +63,10 @@ const AboutSection: React.FC = () => {
               Leveraging advanced analytics and machine learning to extract insights and optimize business performance
             </p>
           </div>
-          <div className="text-center">
+          <div 
+            className="text-center cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => setActiveTab('mechanical')}
+          >
             <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Settings className="text-white" size={24} />
             </div>

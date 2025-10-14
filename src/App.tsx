@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import Navigation from './components/Navigation';
-import AboutSection from './components/AboutSection';
+import { useState } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
+import CustomLimelightNav from './components/CustomLimelightNav';
+import StarfallAboutSection from './components/StarfallAboutSection';
 import ProductManagementSection from './components/ProductManagementSection';
 import DataAnalyticsSection from './components/DataAnalyticsSection';
 import MechanicalSection from './components/MechanicalSection';
 import EducationSection from './components/EducationSection';
+import ResumeSection from './components/ResumeSection';
 import ContactSection from './components/ContactSection';
 
 function App() {
@@ -13,38 +15,42 @@ function App() {
   const renderActiveSection = () => {
     switch (activeTab) {
       case 'about':
-        return <AboutSection />;
+        return <StarfallAboutSection setActiveTab={setActiveTab} />;
       case 'product':
-        return <ProductManagementSection />;
+        return <ProductManagementSection setActiveTab={setActiveTab} />;
       case 'data':
-        return <DataAnalyticsSection />;
+        return <DataAnalyticsSection setActiveTab={setActiveTab} />;
       case 'mechanical':
-        return <MechanicalSection />;
+        return <MechanicalSection setActiveTab={setActiveTab} />;
       case 'education':
-        return <EducationSection />;
+        return <EducationSection setActiveTab={setActiveTab} />;
+      case 'resume':
+        return <ResumeSection setActiveTab={setActiveTab} />;
       case 'contact':
-        return <ContactSection />;
+        return <ContactSection setActiveTab={setActiveTab} />;
       default:
-        return <AboutSection />;
+        return <StarfallAboutSection setActiveTab={setActiveTab} />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
-      <main>
-        {renderActiveSection()}
-      </main>
-      
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">
-            © 2025 Your Name. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+        <CustomLimelightNav activeTab={activeTab} setActiveTab={setActiveTab} />
+        <main>
+          {renderActiveSection()}
+        </main>
+        
+        {/* Footer */}
+        <footer className="bg-background border-t border-border py-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-muted-foreground inter-font">
+              © 2025 Saswat Dash. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </ThemeProvider>
   );
 }
 
