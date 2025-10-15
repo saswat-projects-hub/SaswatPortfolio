@@ -1,6 +1,7 @@
 import React from 'react';
 import TiltCard from './TiltCard';
 import ShootingStarsBackground from './ShootingStarsBackground';
+import FloatingSideNav from './FloatingSideNav';
 import { GraduationCap, Award, Users, Target, BookOpen } from 'lucide-react';
 
 interface EducationSectionProps {
@@ -8,6 +9,12 @@ interface EducationSectionProps {
 }
 
 const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => {
+  const navItems = [
+    { id: 'edu-education', label: 'Education', icon: GraduationCap },
+    { id: 'edu-positions', label: 'Positions', icon: Users },
+    { id: 'edu-awards', label: 'Awards', icon: Award },
+    { id: 'edu-competencies', label: 'Competencies', icon: BookOpen }
+  ];
   const positionsOfResponsibility = [
     {
       title: "Governor",
@@ -53,6 +60,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
   return (
     <div className="min-h-screen relative bg-background text-foreground overflow-hidden">
       <ShootingStarsBackground />
+      <FloatingSideNav items={navItems} />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-foreground mb-4">Education & Skills</h1>
@@ -62,7 +70,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
       </div>
 
       {/* Education */}
-      <section className="mb-16">
+      <section id="edu-education" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <GraduationCap className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Education</h2>
@@ -87,7 +95,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
       </section>
 
       {/* Positions of Responsibility */}
-      <section className="mb-16">
+      <section id="edu-positions" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Users className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Positions of Responsibility</h2>
@@ -118,7 +126,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
       </section>
 
       {/* Awards and Achievements */}
-      <section className="mb-16">
+      <section id="edu-awards" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Award className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Awards and Achievements</h2>
@@ -136,7 +144,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
       </section>
 
       {/* Core Competencies */}
-      <section>
+      <section id="edu-competencies" className="scroll-mt-24">
         <div className="flex items-center mb-8">
           <BookOpen className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Core Competencies</h2>

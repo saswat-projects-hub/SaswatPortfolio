@@ -11,13 +11,14 @@ import ContactSection from './components/ContactSection';
 
 function App() {
   const [activeTab, setActiveTab] = useState('about');
+  const [hideTopNav, setHideTopNav] = useState(false);
 
   const renderActiveSection = () => {
     switch (activeTab) {
       case 'about':
         return <StarfallAboutSection setActiveTab={setActiveTab} />;
       case 'product':
-        return <ProductManagementSection setActiveTab={setActiveTab} />;
+        return <ProductManagementSection setActiveTab={setActiveTab} setHideTopNav={setHideTopNav} />;
       case 'data':
         return <DataAnalyticsSection setActiveTab={setActiveTab} />;
       case 'mechanical':
@@ -36,7 +37,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-        <CustomLimelightNav activeTab={activeTab} setActiveTab={setActiveTab} />
+        {!hideTopNav && <CustomLimelightNav activeTab={activeTab} setActiveTab={setActiveTab} />}
         <main>
           {renderActiveSection()}
         </main>

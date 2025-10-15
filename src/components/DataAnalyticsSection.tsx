@@ -1,6 +1,7 @@
 import React from 'react';
 import TiltCard from './TiltCard';
 import ShootingStarsBackground from './ShootingStarsBackground';
+import FloatingSideNav from './FloatingSideNav';
 import { BarChart3, Calendar, TrendingUp, Award, Database, Code, Brain } from 'lucide-react';
 
 interface DataAnalyticsSectionProps {
@@ -8,6 +9,12 @@ interface DataAnalyticsSectionProps {
 }
 
 const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTab }) => {
+  const navItems = [
+    { id: 'data-internships', label: 'Internships', icon: BarChart3 },
+    { id: 'data-projects', label: 'Projects', icon: Database },
+    { id: 'data-competitions', label: 'Achievements', icon: Award },
+    { id: 'data-skills', label: 'Skills', icon: Code }
+  ];
   const internships = [
     {
       title: "Product Analyst Intern",
@@ -87,6 +94,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
   return (
     <div className="min-h-screen relative bg-background text-foreground overflow-hidden">
       <ShootingStarsBackground />
+      <FloatingSideNav items={navItems} />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-foreground mb-4">Data & Analytics</h1>
@@ -96,7 +104,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
       </div>
 
       {/* Internships */}
-      <section className="mb-16">
+      <section id="data-internships" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <BarChart3 className="text-teal-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Internships</h2>
@@ -131,7 +139,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
       </section>
 
       {/* Projects */}
-      <section className="mb-16">
+      <section id="data-projects" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Database className="text-teal-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Projects</h2>
@@ -156,7 +164,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
       </section>
 
       {/* Competitions & Achievements */}
-      <section className="mb-16">
+      <section id="data-competitions" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Award className="text-teal-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Competitions & Achievements</h2>
@@ -179,7 +187,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
       </section>
 
       {/* Skills and Expertise */}
-      <section>
+      <section id="data-skills" className="scroll-mt-24">
         <div className="flex items-center mb-8">
           <Code className="text-teal-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Skills and Expertise</h2>

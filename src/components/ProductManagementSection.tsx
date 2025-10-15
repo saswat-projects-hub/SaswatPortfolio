@@ -3,15 +3,35 @@ import TiltCard from './TiltCard';
 import ShootingStarsBackground from './ShootingStarsBackground';
 import ProjectModal from './ProjectModal';
 import ImageLightbox from './ImageLightbox';
-import { Building, Calendar, TrendingUp, Award, Wrench, Target, FileText, BookOpen, PenTool, Eye } from 'lucide-react';
+import FloatingSideNav from './FloatingSideNav';
+import { Building, Calendar, TrendingUp, Award, Wrench, Target, FileText, PenTool, Eye } from 'lucide-react';
 
 interface ProductManagementSectionProps {
   setActiveTab: (tab: string) => void;
+  setHideTopNav?: (hide: boolean) => void;
 }
 
-const ProductManagementSection: React.FC<ProductManagementSectionProps> = ({ setActiveTab }) => {
+const ProductManagementSection: React.FC<ProductManagementSectionProps> = ({ setActiveTab, setHideTopNav }) => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [selectedImage, setSelectedImage] = useState<any>(null);
+
+  // Hide top nav when modals are open
+  React.useEffect(() => {
+    if (setHideTopNav) {
+      setHideTopNav(selectedProject !== null || selectedImage !== null);
+    }
+  }, [selectedProject, selectedImage, setHideTopNav]);
+
+  const navItems = [
+    { id: 'entrepreneurial', label: 'Entrepreneurial', icon: Award },
+    { id: 'internships', label: 'Internships', icon: Building },
+    { id: 'projects', label: 'Projects', icon: Wrench },
+    { id: 'competitions', label: 'Achievements', icon: Award },
+    { id: 'case-studies', label: 'Case Studies', icon: FileText },
+    { id: 'prds', label: 'PRDs', icon: PenTool },
+    { id: 'ui-design', label: 'UI/UX Design', icon: Eye },
+    { id: 'skills', label: 'Skills', icon: Target }
+  ];
 
   const caseStudies = [
     {
@@ -257,105 +277,76 @@ Key recommendations include optimizing the landing page to showcase confidence a
 
   const uiDesigns = [
     {
-      src: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=600&fit=crop",
-      alt: "InstaPrepsAI Dashboard Design",
-      title: "InstaPrepsAI Assessment Dashboard",
-      description: "Clean, intuitive dashboard design for educators to manage assessments and track student progress.",
-      link: "#",
-      images: [
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
-      ]
-    },
-    {
-      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      alt: "Devlaunch Community Interface",
-      title: "Devlaunch Community Platform",
-      description: "Modern community interface with forums, events, and gamification elements to boost engagement.",
-      link: "#",
-      images: [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
-      ]
-    },
-    {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      alt: "Nexorea AI Chat Interface",
-      title: "Nexorea AI Wellness Chat",
+      src: "src/assets/UI designs/Confido/1.png",
+      alt: "Confido",
+      title: "Confido AI Interview preparation",
       description: "Empathetic AI chat interface designed for mental wellness support with privacy-first approach.",
       link: "#",
       images: [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop"
+        "src/assets/UI designs/Confido/1.png",
+        "src/assets/UI designs/Confido/2.png",
+        "src/assets/UI designs/Confido/3.png"
       ]
     },
     {
-      src: "https://drive.google.com/file/d/1RRbFkwDsr1HraNq9gF3-7lpC8X8lAK-6/view?usp=drive_link",
+      src: "src/assets/UI designs/InstaPrepsAI/1.png",
+      alt: "InstaPrepsAI Dashboard Design",
+      title: "InstaPrepsAI Assessment Dashboard",
+      description: "Clean, intuitive dashboard design for educators to manage assessments and track student progress.",
+      link: "https://www.figma.com/proto/iMJVZXkCCgWb8SYy2e5xZy/InstaPrepsAI?page-id=0%3A1&node-id=1-2&p=f&viewport=40%2C245%2C0.17&t=dH2l4TppzUNlTIeE-1&scaling=min-zoom&content-scaling=fixed",
+      images: [
+        "src/assets/UI designs/InstaPrepsAI/1.png",
+        "src/assets/UI designs/InstaPrepsAI/2.png",
+        "src/assets/UI designs/InstaPrepsAI/3.png",
+        "src/assets/UI designs/InstaPrepsAI/4.png",
+        "src/assets/UI designs/InstaPrepsAI/5.png",
+        "src/assets/UI designs/InstaPrepsAI/6.png"
+      ]
+    },
+    {
+      src: "src/assets/UI designs/Student Module/Dashboard.png",
+      alt: "Student Analytics Dashboard Design",
+      title: "Student Analytics Dashboard",
+      description: "Comprehensive analytics dashboard for Students to track key metrics and progress.",
+      link: "#",
+      images: [
+        "src/assets/UI designs/Student Module/Dashboard.png",
+        "src/assets/UI designs/Student Module/tests.png",
+        "src/assets/UI designs/Student Module/results.png",
+        "src/assets/UI designs/Student Module/profile.png",
+      ]
+    },
+    {
+      src: "src/assets/UI designs/BOOK RESELLING/Screenshot 2025-10-15 052558.png",
       alt: "Book Reselling App",
       title: "Book Reselling App",
       description: "Zen-inspired mobile app design for reselling books.",
-      link: "#",
+      link: "https://www.figma.com/proto/QAed5MV3q07SkUy8KJEdh8/BOOK-RESELLING?page-id=0%3A1&node-id=7-5&viewport=503%2C335%2C0.19&t=cUdxonCoJIyu02cs-1&scaling=scale-down&content-scaling=fixed",
       images: [
-        "https://drive.google.com/file/d/1D8MrIaxcz8Mrvt1nd84vOYt2WtQ-XUYN/view?usp=drive_link",
-        "https://drive.google.com/file/d/1aqRX520gDKTVboX_zlhgp5VLnlEiY0vs/view?usp=drive_link",
-        "https://drive.google.com/file/d/1xMZpFquqU_y_0NR8fwpkCT0ZosRA9aBH/view?usp=drive_link",
-        "https://drive.google.com/file/d/1urjzclhAx570PYEZsWELWFwx2EvhL42M/view?usp=drive_link",
-        "https://drive.google.com/file/d/1ZaXjTGQFBi1SfJC5mv-tH9QjVJRXn1f6/view?usp=drive_link",
-        "https://drive.google.com/file/d/1D8MrIaxcz8Mrvt1nd84vOYt2WtQ-XUYN/view?usp=drive_link",
-        "https://drive.google.com/file/d/1_1WamGnP0mkSUnDT0_gjaXC6qYlyLg45/view?usp=drive_link",
-        "https://drive.google.com/file/d/1snLpfN2cmhQ-COslDP2-pxu9PfbizUDy/view?usp=drive_link"
-
+        "src/assets/UI designs/BOOK RESELLING/Loading Page.png",
+        "src/assets/UI designs/BOOK RESELLING/On boarding 1.png",
+        "src/assets/UI designs/BOOK RESELLING/Onboarding 2.png",
+        "src/assets/UI designs/BOOK RESELLING/Onboarding 3.png",
+        "src/assets/UI designs/BOOK RESELLING/Onboarding 4.png",
+        "src/assets/UI designs/BOOK RESELLING/Home Page.png",
+        "src/assets/UI designs/BOOK RESELLING/Search.png",
+        "src/assets/UI designs/BOOK RESELLING/Search 2.png",
+        "src/assets/UI designs/BOOK RESELLING/Search 3.png"
       ]
-    },
+    }
+    ,
     {
-      src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      src: "src/assets/UI designs/Marketplace/1.png",
       alt: "Artisanal Marketplace Design",
       title: "Artisanal Marketplace Platform",
       description: "Elegant marketplace design showcasing artisanal products with seller tools and buyer experience.",
-      link: "#",
+      link: "https://www.figma.com/proto/vpai2oTOrkZu2uSKZqdqAM/Nexorea?page-id=0%3A1&node-id=51-1097&p=f&viewport=872%2C300%2C0.13&t=WqOTJhA7cs94HPxi-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=51%3A1097",
       images: [
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&h=600&fit=crop"
-      ]
-    },
-    {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      alt: "Navigation App Interface",
-      title: "Smart Navigation App",
-      description: "Modern navigation interface with IoT integration and AI-powered route optimization features.",
-      link: "#",
-      images: [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1485988412941-77a35537dae4?w=800&h=600&fit=crop"
-      ]
-    },
-    {
-      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      alt: "Analytics Dashboard Design",
-      title: "Product Analytics Dashboard",
-      description: "Comprehensive analytics dashboard for product managers to track key metrics and user behavior.",
-      link: "#",
-      images: [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=600&fit=crop"
-      ]
-    },
-    {
-      src: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=600&fit=crop",
-      alt: "User Research Platform",
-      title: "User Research Platform",
-      description: "Intuitive platform for conducting user research, managing interviews, and analyzing feedback.",
-      link: "#",
-      images: [
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop"
+        "src/assets/UI designs/Marketplace/1.png",
+        "src/assets/UI designs/Marketplace/1.1.png",
+        "src/assets/UI designs/Marketplace/2.png",
+        "src/assets/UI designs/Marketplace/2.1.png",
+        "src/assets/UI designs/Marketplace/2.2.png"
       ]
     }
   ];
@@ -450,6 +441,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
   return (
     <div className="min-h-screen relative bg-background text-foreground overflow-hidden">
       <ShootingStarsBackground />
+      <FloatingSideNav items={navItems} />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-foreground mb-4">Product Management</h1>
@@ -468,7 +460,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
 
 
       {/* Entrepreneurial Experiences */}
-      <section className="mb-16">
+      <section id="entrepreneurial" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Award className="text-yellow-500 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Entrepreneurial Experiences</h2>
@@ -512,7 +504,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
       </section>
 
       {/* Internships */}
-      <section className="mb-16">
+      <section id="internships" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Building className="text-white-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Internships</h2>
@@ -571,7 +563,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
       </section>
 
       {/* Competitions & Achievements */}
-      <section className="mb-16">
+      <section id="competitions" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Award className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Competitions & Achievements</h2>
@@ -591,7 +583,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
       </section>
 
       {/* Case Studies */}
-      <section className="mb-16">
+      <section id="case-studies" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <FileText className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Case Studies</h2>
@@ -672,7 +664,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
       */}
 
       {/* PRDs */}
-      <section className="mb-16">
+      <section id="prds" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <PenTool className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">PRDs</h2>
@@ -713,7 +705,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
       </section>
 
       {/* UI/UX Design */}
-      <section className="mb-16">
+      <section id="ui-design" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <PenTool className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">UI/UX Design</h2>
@@ -748,7 +740,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
       </section>
 
       {/* Skills and Expertise */}
-      <section>
+      <section id="skills" className="scroll-mt-24">
         <div className="flex items-center mb-8">
           <Target className="text-blue-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Skills and Expertise</h2>

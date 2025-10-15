@@ -26,18 +26,21 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) => {
             </div>
             <span className="geist-font text-lg font-medium text-foreground">Saswat Dash</span>
           </div>
-          <div className="hidden md:flex items-center space-x-8 ">
-            {tabs.map(({ id, label }) => (
+          <div className="hidden md:flex items-center space-x-4 ">
+            {tabs.map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
                 onClick={() => setActiveTab(id)}
-                className={`inter-font text-sm transition-colors duration-200 ${
+                className={`group relative flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 ${
                   activeTab === id
-                    ? 'text-foreground font-medium'
-                    : 'text-muted-foreground hover:text-foreground'
+                    ? 'text-foreground font-medium bg-white/10 dark:bg-white/5'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-white/5 dark:hover:bg-white/5'
                 }`}
               >
-                {label}
+                <Icon size={18} />
+                <span className="inter-font text-sm max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
+                  {label}
+                </span>
               </button>
             ))}
           </div>

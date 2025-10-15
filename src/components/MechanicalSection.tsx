@@ -1,6 +1,7 @@
 import React from 'react';
 import TiltCard from './TiltCard';
 import ShootingStarsBackground from './ShootingStarsBackground';
+import FloatingSideNav from './FloatingSideNav';
 import { Settings, Calendar, TrendingUp, Cog, Wrench, Book } from 'lucide-react';
 
 interface MechanicalSectionProps {
@@ -8,6 +9,12 @@ interface MechanicalSectionProps {
 }
 
 const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) => {
+  const navItems = [
+    { id: 'mech-internships', label: 'Internships', icon: Cog },
+    { id: 'mech-projects', label: 'Projects', icon: Wrench },
+    { id: 'mech-coursework', label: 'Coursework', icon: Book },
+    { id: 'mech-skills', label: 'Skills', icon: Settings }
+  ];
   const internships = [
     {
       title: "Product Development Intern",
@@ -68,6 +75,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
   return (
     <div className="min-h-screen relative bg-background text-foreground overflow-hidden">
       <ShootingStarsBackground />
+      <FloatingSideNav items={navItems} />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-foreground mb-4">Mechanical Core</h1>
@@ -85,7 +93,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
       </div>
 
       {/* Internships */}
-      <section className="mb-16">
+      <section id="mech-internships" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Cog className="text-orange-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Internships</h2>
@@ -119,7 +127,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
       </section>
 
       {/* Major Technical Projects */}
-      <section className="mb-16" id="mechanical-projects">
+      <section id="mech-projects" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Wrench className="text-orange-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Major Technical Projects</h2>
@@ -153,7 +161,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
       </section>
 
       {/* Coursework Highlights */}
-      <section className="mb-16">
+      <section id="mech-coursework" className="mb-16 scroll-mt-24">
         <div className="flex items-center mb-8">
           <Book className="text-orange-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Coursework Highlights</h2>
@@ -177,7 +185,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
       </section>
 
       {/* Skills and Expertise */}
-      <section>
+      <section id="mech-skills" className="scroll-mt-24">
         <div className="flex items-center mb-8">
           <Settings className="text-orange-600 mr-3" size={28} />
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Skills and Expertise</h2>
