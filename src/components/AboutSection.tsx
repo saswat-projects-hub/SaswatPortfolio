@@ -10,11 +10,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({ setActiveTab }) => {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full mx-auto mb-8 flex items-center justify-center">
+        <div className="w-40 h-40 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full mx-auto mb-8 flex items-center justify-center">
           <img
-            src="src/assets/images/Profile photo.jpeg"
+            src="https://photos.app.goo.gl/gcd6NRyEiaaef4cL6"
             alt="profile Logo"
-            className="w-50 h-50 object-cover rounded-full border-4 border-white shadow-lg"
+            className="w-full h-full object-cover rounded-full shadow-lg"
           />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

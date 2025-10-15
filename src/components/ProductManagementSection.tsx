@@ -293,15 +293,21 @@ Key recommendations include optimizing the landing page to showcase confidence a
       ]
     },
     {
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
-      alt: "Habuild Yoga App Design",
-      title: "Habuild Yoga Session App",
-      description: "Zen-inspired mobile app design for yoga sessions with group features and subscription management.",
+      src: "https://drive.google.com/file/d/1RRbFkwDsr1HraNq9gF3-7lpC8X8lAK-6/view?usp=drive_link",
+      alt: "Book Reselling App",
+      title: "Book Reselling App",
+      description: "Zen-inspired mobile app design for reselling books.",
       link: "#",
       images: [
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop"
+        "https://drive.google.com/file/d/1D8MrIaxcz8Mrvt1nd84vOYt2WtQ-XUYN/view?usp=drive_link",
+        "https://drive.google.com/file/d/1aqRX520gDKTVboX_zlhgp5VLnlEiY0vs/view?usp=drive_link",
+        "https://drive.google.com/file/d/1xMZpFquqU_y_0NR8fwpkCT0ZosRA9aBH/view?usp=drive_link",
+        "https://drive.google.com/file/d/1urjzclhAx570PYEZsWELWFwx2EvhL42M/view?usp=drive_link",
+        "https://drive.google.com/file/d/1ZaXjTGQFBi1SfJC5mv-tH9QjVJRXn1f6/view?usp=drive_link",
+        "https://drive.google.com/file/d/1D8MrIaxcz8Mrvt1nd84vOYt2WtQ-XUYN/view?usp=drive_link",
+        "https://drive.google.com/file/d/1_1WamGnP0mkSUnDT0_gjaXC6qYlyLg45/view?usp=drive_link",
+        "https://drive.google.com/file/d/1snLpfN2cmhQ-COslDP2-pxu9PfbizUDy/view?usp=drive_link"
+
       ]
     },
     {
