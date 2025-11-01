@@ -12,7 +12,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ setActiveTab }) => {
       <div className="text-center mb-16">
         <div className="w-40 h-40 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full mx-auto mb-8 flex items-center justify-center">
           <img
-            src="src/assets/images/Profile photo.jpeg"
+            src="https://photos.app.goo.gl/gcd6NRyEiaaef4cL6"
             alt="profile Logo"
             className="w-full h-full object-cover rounded-full shadow-lg"
           />
