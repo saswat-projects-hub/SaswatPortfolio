@@ -8,6 +8,7 @@ import MechanicalSection from './components/MechanicalSection';
 import EducationSection from './components/EducationSection';
 import ResumeSection from './components/ResumeSection';
 import ContactSection from './components/ContactSection';
+import KnowMeOffTheTrack from './components/KnowMeOffTheTrack';
 
 function App() {
   const [activeTab, setActiveTab] = useState('about');
@@ -29,6 +30,8 @@ function App() {
         return <ResumeSection setActiveTab={setActiveTab} />;
       case 'contact':
         return <ContactSection setActiveTab={setActiveTab} />;
+      case 'offtrack':
+        return <KnowMeOffTheTrack setActiveTab={setActiveTab} />;
       default:
         return <StarfallAboutSection setActiveTab={setActiveTab} />;
     }

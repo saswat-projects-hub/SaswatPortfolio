@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { MapPin, Calendar, Settings, BarChart3, ChevronRight } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import FloatingAviator from './FloatingAviator';
 
 // --- TYPE DEFINITIONS FOR PROPS ---
 interface NavLink { label: string; href: string; }
@@ -239,6 +240,9 @@ const StarfallAboutSection: React.FC<PortfolioPageProps> = ({
             </div>
           </div>
         </main>
+
+        {/* Floating Aviator Button */}
+        <FloatingAviator onClick={() => setActiveTab?.('offtrack')} />
       </div>
     </div>
   );
