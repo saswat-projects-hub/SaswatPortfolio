@@ -1,5 +1,4 @@
 import React from 'react';
-import TiltCard from './TiltCard';
 import ShootingStarsBackground from './ShootingStarsBackground';
 import FloatingSideNav from './FloatingSideNav';
 import { BarChart3, Calendar, TrendingUp, Award, Database, Code, Brain } from 'lucide-react';
@@ -112,7 +111,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
         
         <div className="space-y-8">
           {internships.map((internship, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{internship.title}</h3>
@@ -133,7 +132,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -147,7 +146,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
         
         <div className="space-y-6">
           {projects.map((project, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{project.title}</h3>
               
               <div className="space-y-3">
@@ -158,7 +157,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -172,7 +171,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
         
         <div className="grid md:grid-cols-2 gap-6">
           {competitions.map((competition, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-white/10">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border-2 border-gray-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{competition.title}</h3>
               {competition.subtitle && (
                 <p className="text-teal-600 dark:text-teal-400 font-semibold mb-2">{competition.subtitle}</p>
@@ -181,7 +180,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
                 <p className="text-teal-700 dark:text-teal-300 font-semibold mb-2">{competition.achievement}</p>
               )}
               <p className="text-gray-700 dark:text-gray-300">{competition.description}</p>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -195,7 +194,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
         
         <div className="grid md:grid-cols-3 gap-6">
           {skills.map((skillGroup, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{skillGroup.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((skill, skillIndex) => (
@@ -207,7 +206,7 @@ const DataAnalyticsSection: React.FC<DataAnalyticsSectionProps> = ({ setActiveTa
                   </span>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>

@@ -10,7 +10,6 @@ interface KnowMeOffTheTrackProps {
 const KnowMeOffTheTrack: React.FC<KnowMeOffTheTrackProps> = ({ setActiveTab }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [vibeMeter, setVibeMeter] = useState(65);
-  const [tiltStyle, setTiltStyle] = useState({ transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg)' });
 
   // Carousel images - reference from public folder
   const carouselImages = [
@@ -31,28 +30,6 @@ const KnowMeOffTheTrack: React.FC<KnowMeOffTheTrackProps> = ({ setActiveTab }) =
     }, 4000);
     return () => clearInterval(interval);
   }, [carouselImages.length]);
-
-  // 3D Tilt effect handler
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -10; // Max 10 degrees
-    const rotateY = ((x - centerX) / centerX) * 10; // Max 10 degrees
-    
-    setTiltStyle({
-      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setTiltStyle({
-      transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
-    });
-  };
 
   const funFacts = [
     {
@@ -122,7 +99,7 @@ const KnowMeOffTheTrack: React.FC<KnowMeOffTheTrackProps> = ({ setActiveTab }) =
             className="space-y-8"
           >
             {/* Main Paragraph */}
-            <div className="glass-card rounded-2xl p-8 md:p-10">
+            <div className="glass-card rounded-2xl p-8 md:p-10 border-2 border-gray-200 dark:border-white/10 shadow-sm">
               <div className="space-y-6 text-foreground inter-font leading-relaxed text-lg">
                 <p>
                   <span className="text-3xl mr-2">👋</span>
@@ -144,7 +121,7 @@ const KnowMeOffTheTrack: React.FC<KnowMeOffTheTrackProps> = ({ setActiveTab }) =
             </div>
 
             {/* Fun Facts Card */}
-            <div className="glass-card rounded-2xl p-8 md:p-10 bg-gradient-to-br from-purple-50/50 via-blue-50/50 to-pink-50/50 dark:from-purple-900/10 dark:via-blue-900/10 dark:to-pink-900/10">
+            <div className="glass-card rounded-2xl p-8 md:p-10 border-2 border-gray-200 dark:border-white/10 shadow-sm bg-gradient-to-br from-purple-50/50 via-blue-50/50 to-pink-50/50 dark:from-purple-900/10 dark:via-blue-900/10 dark:to-pink-900/10">
               <h3 className="text-2xl font-bold text-foreground mb-6 geist-font flex items-center gap-2">
                 <span className="text-3xl">✨</span> Fun Facts
               </h3>
@@ -169,7 +146,7 @@ const KnowMeOffTheTrack: React.FC<KnowMeOffTheTrackProps> = ({ setActiveTab }) =
             </div>
           </motion.div>
 
-          {/* Right: 3D Tilted Image Carousel with Blue Border */}
+          {/* Right: Image Carousel with Blue Border */}
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -177,10 +154,7 @@ const KnowMeOffTheTrack: React.FC<KnowMeOffTheTrackProps> = ({ setActiveTab }) =
             className="lg:sticky lg:top-24"
           >
             <div
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              style={tiltStyle}
-              className="relative rounded-2xl overflow-hidden border-[5px] border-blue-500 shadow-2xl transition-all duration-200 ease-out cursor-pointer"
+              className="relative rounded-2xl overflow-hidden border-[5px] border-blue-500 shadow-2xl transition-all duration-200 ease-out"
             >
               {/* Image Carousel */}
               <div className="relative w-full min-h-[400px] lg:min-h-[500px] bg-gradient-to-br from-purple-100 via-blue-100 to-pink-100 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-pink-900/20">
@@ -238,7 +212,7 @@ const KnowMeOffTheTrack: React.FC<KnowMeOffTheTrackProps> = ({ setActiveTab }) =
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1 }}
-          className="glass-card rounded-2xl p-8 md:p-10 max-w-2xl mx-auto"
+          className="glass-card rounded-2xl p-8 md:p-10 border-2 border-gray-200 dark:border-white/10 shadow-sm max-w-2xl mx-auto"
         >
           <h3 className="text-2xl font-bold text-foreground mb-6 geist-font text-center">
             Current Vibe Meter

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import TiltCard from './TiltCard';
 import ShootingStarsBackground from './ShootingStarsBackground';
 import ProjectModal from './ProjectModal';
 import ImageLightbox from './ImageLightbox';
@@ -467,7 +466,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
         </div>
         <div className="space-y-8">
           {entrepreneurialExperiences.map((exp, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{exp.title}</h3>
@@ -498,7 +497,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -511,7 +510,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
         </div>
         <div className="space-y-8">
           {internships.map((internship, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{internship.title}</h3>
@@ -531,7 +530,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -545,7 +544,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
         
         <div className="space-y-6">
           {projects.map((project, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">{project.subtitle}</p>
               
@@ -557,7 +556,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -571,13 +570,13 @@ Key recommendations include optimizing the landing page to showcase confidence a
         
         <div className="grid md:grid-cols-2 gap-6">
           {competitions.map((competition, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-white/10">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border-2 border-gray-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{competition.title}</h3>
               {competition.achievement && (
                 <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{competition.achievement}</p>
               )}
               <p className="text-gray-700 dark:text-gray-300">{competition.description}</p>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -591,7 +590,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {caseStudies.map((study, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{study.title}</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm leading-relaxed">{study.description}</p>
               
@@ -618,7 +617,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
                 <Eye className="mr-2" size={16} />
                 View Work
               </button>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -632,7 +631,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogs.map((blog, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{blog.title}</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm leading-relaxed">{blog.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -657,7 +656,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
                 <Eye className="mr-2" size={16} />
                 View Work
               </button>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -672,7 +671,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {prds.map((prd, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{prd.title}</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm leading-relaxed">{prd.description}</p>
               
@@ -699,7 +698,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
                 <Eye className="mr-2" size={16} />
                 View Work
               </button>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -718,7 +717,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
               className="group cursor-pointer"
               onClick={() => setSelectedImage(design)}
             >
-              <div className="relative overflow-hidden rounded-xl border border-white/20 dark:border-white/10 bg-white/10 dark:bg-black/20 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+              <div className="relative overflow-hidden rounded-xl border-2 border-gray-200 dark:border-white/10 bg-white/10 dark:bg-black/20 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
                 <img
                   src={design.src}
                   alt={design.alt}
@@ -748,7 +747,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
         
         <div className="grid md:grid-cols-3 gap-6">
           {skills.map((skillGroup, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{skillGroup.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((skill, skillIndex) => (
@@ -760,7 +759,7 @@ Key recommendations include optimizing the landing page to showcase confidence a
                   </span>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>

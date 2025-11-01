@@ -1,5 +1,4 @@
 import React from 'react';
-import TiltCard from './TiltCard';
 import ShootingStarsBackground from './ShootingStarsBackground';
 import FloatingSideNav from './FloatingSideNav';
 import { GraduationCap, Award, Users, Target, BookOpen } from 'lucide-react';
@@ -76,7 +75,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
           <h2 className="text-3xl font-bold text-gray-900 dark:text-blue-300">Education</h2>
         </div>
         
-        <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-white/20 dark:border-white/10">
+        <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-8 border-2 border-gray-200 dark:border-white/10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">M.Tech Dual Degree (5Y)</h3>
@@ -85,7 +84,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
               <p className="text-gray-600 dark:text-gray-400">Expected 2026</p>
             </div>
             <div className="mt-4 md:mt-0">
-              <div className="text-center bg-white/20 dark:bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-white/20 dark:border-white/10">
+              <div className="text-center bg-white/20 dark:bg-black/30 backdrop-blur-sm rounded-lg p-4 border-2 border-gray-200 dark:border-white/10">
                 <p className="text-2xl font-bold text-gray-900 dark:text-white">8.03/10</p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">CGPA</p>
               </div>
@@ -103,7 +102,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
         
         <div className="space-y-6">
           {positionsOfResponsibility.map((position, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{position.title}</h3>
@@ -120,7 +119,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -134,11 +133,11 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
         
         <div className="grid md:grid-cols-3 gap-6">
           {awards.map((award, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-white/10 text-center">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border-2 border-gray-200 dark:border-white/10 text-center">
               <Award className="text-yellow-500 dark:text-yellow-400 mx-auto mb-4" size={40} />
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{award.title}</h3>
               <p className="text-orange-600 dark:text-orange-400 font-semibold">{award.achievement}</p>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -151,7 +150,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6">
+          <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Product & Strategy</h3>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300">
               <li>• Product Management & Strategy</li>
@@ -161,7 +160,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
             </ul>
           </div>
           
-          <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6">
+          <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Data & Analytics</h3>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300">
               <li>• Statistical Analysis</li>
@@ -171,7 +170,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ setActiveTab }) => 
             </ul>
           </div>
           
-          <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6">
+          <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Engineering</h3>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300">
               <li>• CAD/CAM Design</li>

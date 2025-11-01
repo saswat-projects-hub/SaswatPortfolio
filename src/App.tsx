@@ -9,6 +9,7 @@ import EducationSection from './components/EducationSection';
 import ResumeSection from './components/ResumeSection';
 import ContactSection from './components/ContactSection';
 import KnowMeOffTheTrack from './components/KnowMeOffTheTrack';
+import ViewMyWorkSection from './components/ViewMyWorkSection';
 
 function App() {
   const [activeTab, setActiveTab] = useState('about');
@@ -18,6 +19,8 @@ function App() {
     switch (activeTab) {
       case 'about':
         return <StarfallAboutSection setActiveTab={setActiveTab} />;
+      case 'viewwork':
+        return <ViewMyWorkSection setActiveTab={setActiveTab} />;
       case 'product':
         return <ProductManagementSection setActiveTab={setActiveTab} setHideTopNav={setHideTopNav} />;
       case 'data':

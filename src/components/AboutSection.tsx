@@ -80,7 +80,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ setActiveTab }) => {
 
       {/* Key Achievements */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+        <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-300 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center justify-between mb-4">
             <Trophy className="text-yellow-500" size={32} />
             <span className="text-2xl font-bold text-gray-900">9th</span>
@@ -88,7 +88,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ setActiveTab }) => {
           <p className="text-gray-600">American Express Campus Challenge out of 4,518 participants</p>
         </div>
         
-        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+        <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-300 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center justify-between mb-4">
             <Users className="text-blue-500" size={32} />
             <span className="text-2xl font-bold text-gray-900">67%</span>
@@ -96,7 +96,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ setActiveTab }) => {
           <p className="text-gray-600">MAU growth achieved at InstaPrepsAI through strategic relaunch</p>
         </div>
         
-        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+        <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-300 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center justify-between mb-4">
             <BarChart3 className="text-teal-500" size={32} />
             <span className="text-2xl font-bold text-gray-900">85%</span>
@@ -104,7 +104,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ setActiveTab }) => {
           <p className="text-gray-600">Model accuracy achieved in AtliQ Hotels Revenue Optimization</p>
         </div>
         
-        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+        <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-300 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center justify-between mb-4">
             <Settings className="text-orange-500" size={32} />
             <span className="text-2xl font-bold text-gray-900">55%</span>

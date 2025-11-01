@@ -78,13 +78,13 @@ const StarfallAboutSection: React.FC<PortfolioPageProps> = ({
   ],
   resume = { label: 'Resume' },
   hero = {
-    titleLine1: 'Saswat Dash',
+    titleLine1: "Hey, I'm Saswat",
     titleLine2Gradient: 'Multi-Disciplinary Professional',
-    subtitle: 'Multi-disciplinary professional with expertise in Product Management, Data Analytics, and Mechanical Engineering. Currently pursuing my degree at IIT Kharagpur with expected graduation in 2026.'
+    subtitle: 'Turning bold ideas into real-world products with sharp data insights, intelligent systems, and obsessive focus on user experience.'
   },
   ctaButtons = {
     primary: { label: 'Get In Touch', onClick: () => setActiveTab?.('contact') },
-    secondary: { label: 'View My Work', onClick: () => setActiveTab?.('education') }
+    secondary: { label: 'View My Work', onClick: () => setActiveTab?.('viewwork') }
   },
   projects = [
     {
@@ -134,58 +134,70 @@ const StarfallAboutSection: React.FC<PortfolioPageProps> = ({
 
         {/* Main Content */}
         <main id="about" className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-20">
-          <div className="max-w-6xl mx-auto text-center">
-            {/* Hero Section with Profile Photo */}
-            <div className="mb-8 float-animation">
-              {/* Profile Photo */}
-              <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full mx-auto mb-8 flex items-center justify-center relative">
-                <img
-                  src="src/assets/images/Profile photo.jpeg"
-                  alt="Saswat Dash"
-                  className="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg"
-                />
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-                  <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+          <div className="max-w-6xl mx-auto">
+            {/* Hero Section with Two Columns */}
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+              {/* Left Side - Content */}
+              <div className="space-y-6 float-animation">
+                {/* Hero Title */}
+                <h1 className="leading-[1.1] geist-font">
+                  <span className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tight block mb-2 animate-fade-in">
+                    {hero.titleLine1}
+                  </span>
+                  <span className="gradient-text text-2xl md:text-3xl lg:text-4xl font-light block tracking-tight">{hero.titleLine2Gradient}</span>
+                </h1>
+                
+                <p className="md:text-xl leading-relaxed inter-font text-lg font-light text-muted-foreground">
+                  {hero.subtitle}
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <button 
+                    onClick={ctaButtons.primary.onClick} 
+                    className="primary-button px-6 py-3 text-white rounded-lg font-medium text-sm min-w-[160px] flex items-center justify-center gap-2"
+                  >
+                    {ctaButtons.primary.label}
+                    <ChevronRight size={16} />
+                  </button>
+                  <button 
+                    onClick={ctaButtons.secondary.onClick} 
+                    className="glass-button min-w-[160px] inter-font text-sm font-medium text-foreground rounded-lg px-6 py-3"
+                  >
+                    {ctaButtons.secondary.label}
+                  </button>
+                </div>
+
+                {/* Location and Education Info */}
+                <div className="flex flex-wrap gap-6 text-muted-foreground pt-2">
+                  <div className="flex items-center space-x-2">
+                    <MapPin size={20} />
+                    <span className="inter-font">IIT Kharagpur</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Calendar size={20} />
+                    <span className="inter-font">Expected Graduation: 2026</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Hero Title */}
-              <h1 className="md:text-6xl lg:text-7xl leading-[1.1] geist-font text-5xl font-light text-foreground tracking-tight mb-4">
-                {hero.titleLine1}
-                <span className="gradient-text block tracking-tight">{hero.titleLine2Gradient}</span>
-              </h1>
-              <p className="md:text-xl max-w-3xl leading-relaxed inter-font text-lg font-light text-muted-foreground mx-auto">
-                {hero.subtitle}
-              </p>
-
-              {/* Location and Education Info */}
-              <div className="flex flex-wrap justify-center items-center gap-6 text-muted-foreground mt-6">
-                <div className="flex items-center space-x-2">
-                  <MapPin size={18} />
-                  <span className="inter-font">IIT Kharagpur</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Calendar size={18} />
-                  <span className="inter-font">Expected Graduation: 2026</span>
+              {/* Right Side - Profile Photo */}
+              <div className="flex justify-center md:justify-end">
+                <div className="relative w-full max-w-md">
+                  <div className="bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl p-1">
+                    <img
+                      src="src/assets/images/Profile photo.jpeg"
+                      alt="Saswat Dash"
+                      className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
+                    />
+                  </div>
+                  {/* Active Status Badge */}
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-green-500 rounded-full flex items-center gap-2 shadow-lg">
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                    <span className="text-white text-xs font-medium">Available</span>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-              <button 
-                onClick={ctaButtons.primary.onClick} 
-                className="primary-button px-6 py-3 text-white rounded-lg font-medium text-sm min-w-[160px] flex items-center justify-center gap-2"
-              >
-                {ctaButtons.primary.label}
-                <ChevronRight size={16} />
-              </button>
-              <button 
-                onClick={ctaButtons.secondary.onClick} 
-                className="glass-button min-w-[160px] inter-font text-sm font-medium text-foreground rounded-lg px-6 py-3"
-              >
-                {ctaButtons.secondary.label}
-              </button>
             </div>
 
             <div className="divider mb-16" />
@@ -244,6 +256,24 @@ const StarfallAboutSection: React.FC<PortfolioPageProps> = ({
         {/* Floating Aviator Button */}
         <FloatingAviator onClick={() => setActiveTab?.('offtrack')} />
       </div>
+
+      <style>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+          text-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
+        }
+      `}</style>
     </div>
   );
 };

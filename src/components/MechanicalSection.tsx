@@ -1,5 +1,4 @@
 import React from 'react';
-import TiltCard from './TiltCard';
 import ShootingStarsBackground from './ShootingStarsBackground';
 import FloatingSideNav from './FloatingSideNav';
 import { Settings, Calendar, TrendingUp, Cog, Wrench, Book } from 'lucide-react';
@@ -101,7 +100,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
         
         <div className="space-y-8">
           {internships.map((internship, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{internship.title}</h3>
@@ -121,7 +120,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -135,7 +134,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
         
         <div className="space-y-6">
           {projects.map((project, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-8 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
@@ -155,7 +154,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -169,7 +168,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
         
         <div className="grid md:grid-cols-2 gap-6">
           {coursework.map((courseGroup, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-white/10">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl p-6 border-2 border-gray-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{courseGroup.category}</h3>
               <div className="space-y-2">
                 {courseGroup.items.map((course, courseIndex) => (
@@ -179,7 +178,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
                   </div>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
@@ -193,7 +192,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
         
         <div className="grid md:grid-cols-2 gap-6">
           {skills.map((skillGroup, index) => (
-            <TiltCard key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-6">
+            <div key={index} className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-white/10 p-6">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{skillGroup.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((skill, skillIndex) => (
@@ -205,7 +204,7 @@ const MechanicalSection: React.FC<MechanicalSectionProps> = ({ setActiveTab }) =
                   </span>
                 ))}
               </div>
-            </TiltCard>
+            </div>
           ))}
         </div>
       </section>
