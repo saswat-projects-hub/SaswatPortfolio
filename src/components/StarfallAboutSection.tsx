@@ -186,7 +186,7 @@ const StarfallAboutSection: React.FC<PortfolioPageProps> = ({
                 <div className="relative w-full max-w-md">
                   <div className="bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl p-1">
                     <img
-                      src="src/assets/images/Profile photo.jpeg"
+                      src="/images/Profilephoto.jpeg"
                       alt="Saswat Dash"
                       className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
                     />

@@ -276,76 +276,76 @@ Key recommendations include optimizing the landing page to showcase confidence a
 
   const uiDesigns = [
     {
-      src: "src/assets/UI designs/Confido/1.png",
+      src: "/UI designs/Confido/1.png",
       alt: "Confido",
       title: "Confido AI Interview preparation",
       description: "Empathetic AI chat interface designed for mental wellness support with privacy-first approach.",
       link: "#",
       images: [
-        "src/assets/UI designs/Confido/1.png",
-        "src/assets/UI designs/Confido/2.png",
-        "src/assets/UI designs/Confido/3.png"
+        "/UI designs/Confido/1.png",
+        "/UI designs/Confido/2.png",
+        "/UI designs/Confido/3.png"
       ]
     },
     {
-      src: "src/assets/UI designs/InstaPrepsAI/1.png",
+      src: "/UI designs/InstaPrepsAI/1.png",
       alt: "InstaPrepsAI Dashboard Design",
       title: "InstaPrepsAI Assessment Dashboard",
       description: "Clean, intuitive dashboard design for educators to manage assessments and track student progress.",
       link: "https://www.figma.com/proto/iMJVZXkCCgWb8SYy2e5xZy/InstaPrepsAI?page-id=0%3A1&node-id=1-2&p=f&viewport=40%2C245%2C0.17&t=dH2l4TppzUNlTIeE-1&scaling=min-zoom&content-scaling=fixed",
       images: [
-        "src/assets/UI designs/InstaPrepsAI/1.png",
-        "src/assets/UI designs/InstaPrepsAI/2.png",
-        "src/assets/UI designs/InstaPrepsAI/3.png",
-        "src/assets/UI designs/InstaPrepsAI/4.png",
-        "src/assets/UI designs/InstaPrepsAI/5.png",
-        "src/assets/UI designs/InstaPrepsAI/6.png"
+        "/UI designs/InstaPrepsAI/1.png",
+        "/UI designs/InstaPrepsAI/2.png",
+        "/UI designs/InstaPrepsAI/3.png",
+        "/UI designs/InstaPrepsAI/4.png",
+        "/UI designs/InstaPrepsAI/5.png",
+        "/UI designs/InstaPrepsAI/6.png"
       ]
     },
     {
-      src: "src/assets/UI designs/Student Module/Dashboard.png",
+      src: "/UI designs/Student Module/Dashboard.png",
       alt: "Student Analytics Dashboard Design",
       title: "Student Analytics Dashboard",
       description: "Comprehensive analytics dashboard for Students to track key metrics and progress.",
       link: "#",
       images: [
-        "src/assets/UI designs/Student Module/Dashboard.png",
-        "src/assets/UI designs/Student Module/tests.png",
-        "src/assets/UI designs/Student Module/results.png",
-        "src/assets/UI designs/Student Module/profile.png",
+        "/UI designs/Student Module/Dashboard.png",
+        "/UI designs/Student Module/tests.png",
+        "/UI designs/Student Module/results.png",
+        "/UI designs/Student Module/profile.png",
       ]
     },
     {
-      src: "src/assets/UI designs/BOOK RESELLING/Screenshot 2025-10-15 052558.png",
+      src: "/UI designs/BOOK RESELLING/Screenshot 2025-10-15 052558.png",
       alt: "Book Reselling App",
       title: "Book Reselling App",
       description: "Zen-inspired mobile app design for reselling books.",
       link: "https://www.figma.com/proto/QAed5MV3q07SkUy8KJEdh8/BOOK-RESELLING?page-id=0%3A1&node-id=7-5&viewport=503%2C335%2C0.19&t=cUdxonCoJIyu02cs-1&scaling=scale-down&content-scaling=fixed",
       images: [
-        "src/assets/UI designs/BOOK RESELLING/Loading Page.png",
-        "src/assets/UI designs/BOOK RESELLING/On boarding 1.png",
-        "src/assets/UI designs/BOOK RESELLING/Onboarding 2.png",
-        "src/assets/UI designs/BOOK RESELLING/Onboarding 3.png",
-        "src/assets/UI designs/BOOK RESELLING/Onboarding 4.png",
-        "src/assets/UI designs/BOOK RESELLING/Home Page.png",
-        "src/assets/UI designs/BOOK RESELLING/Search.png",
-        "src/assets/UI designs/BOOK RESELLING/Search 2.png",
-        "src/assets/UI designs/BOOK RESELLING/Search 3.png"
+        "/UI designs/BOOK RESELLING/Loading Page.png",
+        "/UI designs/BOOK RESELLING/On boarding 1.png",
+        "/UI designs/BOOK RESELLING/Onboarding 2.png",
+        "/UI designs/BOOK RESELLING/Onboarding 3.png",
+        "/UI designs/BOOK RESELLING/Onboarding 4.png",
+        "/UI designs/BOOK RESELLING/Home Page.png",
+        "/UI designs/BOOK RESELLING/Search.png",
+        "/UI designs/BOOK RESELLING/Search 2.png",
+        "/UI designs/BOOK RESELLING/Search 3.png"
       ]
     }
     ,
     {
-      src: "src/assets/UI designs/Marketplace/1.png",
+      src: "/UI designs/Marketplace/1.png",
       alt: "Artisanal Marketplace Design",
       title: "Artisanal Marketplace Platform",
       description: "Elegant marketplace design showcasing artisanal products with seller tools and buyer experience.",
       link: "https://www.figma.com/proto/vpai2oTOrkZu2uSKZqdqAM/Nexorea?page-id=0%3A1&node-id=51-1097&p=f&viewport=872%2C300%2C0.13&t=WqOTJhA7cs94HPxi-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=51%3A1097",
       images: [
-        "src/assets/UI designs/Marketplace/1.png",
-        "src/assets/UI designs/Marketplace/1.1.png",
-        "src/assets/UI designs/Marketplace/2.png",
-        "src/assets/UI designs/Marketplace/2.1.png",
-        "src/assets/UI designs/Marketplace/2.2.png"
+        "/UI designs/Marketplace/1.png",
+        "/UI designs/Marketplace/1.1.png",
+        "/UI designs/Marketplace/2.png",
+        "/UI designs/Marketplace/2.1.png",
+        "/UI designs/Marketplace/2.2.png"
       ]
     }
   ];
