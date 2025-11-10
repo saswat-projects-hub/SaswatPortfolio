@@ -288,18 +288,18 @@ Key recommendations include optimizing the landing page to showcase confidence a
       ]
     },
     {
-      src: "/UI designs/InstaPrepsAI/1.png",
+      src: "/UI designs/InstaprepsAI/1.png",
       alt: "InstaPrepsAI Dashboard Design",
       title: "InstaPrepsAI Assessment Dashboard",
       description: "Clean, intuitive dashboard design for educators to manage assessments and track student progress.",
       link: "https://www.figma.com/proto/iMJVZXkCCgWb8SYy2e5xZy/InstaPrepsAI?page-id=0%3A1&node-id=1-2&p=f&viewport=40%2C245%2C0.17&t=dH2l4TppzUNlTIeE-1&scaling=min-zoom&content-scaling=fixed",
       images: [
-        "/UI designs/InstaPrepsAI/1.png",
-        "/UI designs/InstaPrepsAI/2.png",
-        "/UI designs/InstaPrepsAI/3.png",
-        "/UI designs/InstaPrepsAI/4.png",
-        "/UI designs/InstaPrepsAI/5.png",
-        "/UI designs/InstaPrepsAI/6.png"
+        "/UI designs/InstaprepsAI/1.png",
+        "/UI designs/InstaprepsAI/2.png",
+        "/UI designs/InstaprepsAI/3.png",
+        "/UI designs/InstaprepsAI/4.png",
+        "/UI designs/InstaprepsAI/5.png",
+        "/UI designs/InstaprepsAI/6.png"
       ]
     },
     {
